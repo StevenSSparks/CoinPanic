@@ -194,6 +194,19 @@ namespace CoinPanic
             }
 
             WritelnText(ConsoleColor.Black, ConsoleColor.Red, "GAME OVER! - Thanks for Playing!");
+            WritelnText(ConsoleColor.Black, ConsoleColor.Red, "Press X to close the game.");
+
+            input= "";
+
+            while (input.ToLower() != "x")
+            {
+
+                while (!Console.KeyAvailable) { Task.Delay(1); }
+                input = Console.ReadKey().KeyChar.ToString().ToLower();
+
+            }
+
+
         }
     }
 }
