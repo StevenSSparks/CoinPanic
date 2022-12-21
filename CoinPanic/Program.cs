@@ -185,7 +185,7 @@ namespace CoinPanic
                     WritelnText(ConsoleColor.Black, ConsoleColor.Red, " = = = = > C O I N  P A N I C  < = = = = ");
                     Console.WriteLine();
                     WriteText(Back, Text, "You collected");
-                    WriteText(Back, ConsoleColor.DarkYellow, $" {coinCount} ");
+                    WriteText(Back, ConsoleColor.DarkYellow, $" {numCoins} ");
                     WritelnText(Back, Text,"coins!");
                     Console.WriteLine();
                     Console.WriteLine();
