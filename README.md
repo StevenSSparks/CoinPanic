@@ -1,9 +1,44 @@
 # Coin Panic
  Simple Colnsole Text Game - Collect as many coins as possible in 100 moves
 
-I created this game based on the code that https://chat.openai.com/chat generated. I changes quite a bit but my son asked it to create a new game and then I took that code and added the details. 
+I was showing my son https://chat.openai.com/chat and he asked the AI to create a game. The I generated some code and then I took that code and used it as the foundation for this game. 
+
+## Object of the Game
+* Select the number of moves 
+* See how many "C"oins the "P"layer can pick up navigating around the text board. 
+
+## Game Play
+
+Welcome to:
+
+ = = = = > C O I N  P A N I C  < = = = =
+
+Gather as many coins as you can in 100 moves!
+[W] = Up, [A] = Left, [S] = Right, [D] = Down to move.
+[X] to Exit the game.
+
+............................C.
+.P............................
+........................C.....
+......C.................C.....
+......C.......................
+...C.....................C....
+..............................
+.......C......................
+..............................
+..............................
+...................C..........
+..............................
+..............................
+..........................C...
+..............................
+
+Coins Collected : 0
+Coins Remaining : 10
+Total Moves     : 0
+
 
 ## Details
 * Simple single file console application
-* The code is a bit verbose but intended to be for beginners to understand
-* Run witn .NET 6
+* Very linear design to help begineers to learn coding and gaming concepts 
+* Text/Console application to limit understanding of advanced concepts 
