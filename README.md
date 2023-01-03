@@ -8,7 +8,7 @@ I was showing my son https://chat.openai.com/chat and he asked the AI to create 
 * See how many "C"oins the "P"layer can pick up navigating around the text board. 
 
 ## Game Play
-
+```
 Welcome to:
 
  = = = = > C O I N  P A N I C  < = = = =
@@ -17,7 +17,7 @@ Gather as many coins as you can in 100 moves!
 [W] = Up, [A] = Left, [S] = Right, [D] = Down to move.
 [X] to Exit the game.
 
-............................C.
+> ............................C.
 .P............................
 ........................C.....
 ......C.................C.....
@@ -36,7 +36,7 @@ Gather as many coins as you can in 100 moves!
 Coins Collected : 0
 Coins Remaining : 10
 Total Moves     : 0
-
+```
 
 ## Details
 * Simple single file console application
