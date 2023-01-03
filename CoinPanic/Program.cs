@@ -55,17 +55,49 @@ namespace CoinPanic
         static void Main(string[] args)
         {
             Console.Title = "Coin Panic";
-            
-
-            int playerX = 1;
-            int playerY = 1;
 
             ConsoleColor Back = ConsoleColor.Black;
             ConsoleColor Text = ConsoleColor.Green;
 
+            string choice = "";
+            while (choice == "")
+            {
+                
+                Console.Clear();
+                Console.BackgroundColor = ConsoleColor.Black;
+                WritelnText(Back, ConsoleColor.Yellow, "Welcome to:");
+                Console.WriteLine();
+                WritelnText(Back, ConsoleColor.Red, " = = = = > C O I N  P A N I C  < = = = = ");
+                Console.WriteLine();
+                WriteText(Back, Text, $"Gather as many coins as you can in a set number of moves!");
+                Console.WriteLine();
+                WritelnText(Back, ConsoleColor.White, "How long of a game do you want to play?");
+                Console.WriteLine();
+                WritelnText(Back, ConsoleColor.Yellow, "1 = 100 Moves");
+                WritelnText(Back, ConsoleColor.Yellow, "2 = 250 Moves");
+                WritelnText(Back, ConsoleColor.Yellow, "3 = 500 Moves");
+                WritelnText(Back, ConsoleColor.Yellow, "X to Exit");
+                Console.WriteLine();
+                WriteText(ConsoleColor.Black, ConsoleColor.White, "Type choice and press enter :");
+                choice = Console.ReadLine();
+
+              
+            }
+
+            int maxMoves = 100;
+            if (choice == "2") maxMoves = 250;
+            if (choice == "3") maxMoves = 500;
+            if (choice.ToLower() == "x") return;
+
+
+            int playerX = 1;
+            int playerY = 1;
+
+           
+
             int levelWidth = 15; // y
             int levelHeight = 30; // x
-            int maxMoves = 100;
+           
             int maxCoins = 10;
             int coinCount = 0;
 
@@ -131,30 +163,36 @@ namespace CoinPanic
 
                 // Get player input
                 while (!Console.KeyAvailable) { Task.Delay(1); }
-                input = Console.ReadKey().KeyChar.ToString().ToLower();
-                moveCounter++;
+                input = Console.ReadKey().Key.ToString().ToLower();
+                // input = Console.ReadKey().KeyChar.ToString().ToLower();
+                
+               
 
                 // Update player position
-                if (input == "w")
+                if ((input == "w") || (input == "uparrow"))
                 {
                     playerY--;
                     if (playerY< 0) playerY = levelWidth-1;
+                    moveCounter++;
 
                 }
-                else if (input == "a")
+                else if ((input == "a") || (input == "leftarrow"))
                 {
                     playerX--;
                     if (playerX < 0) playerX = levelHeight-1;
+                    moveCounter++;
                 }
-                else if (input == "s")
+                else if ((input == "s") || (input == "downarrow"))
                 {
                     playerY++;
                     if (playerY > levelWidth - 1) playerY = 0;
+                    moveCounter++;
                 }
-                else if (input == "d")
+                else if ((input == "d") || (input == "rightarrow"))
                 {
                     playerX++;
                     if (playerX > levelHeight - 1) playerX = 0;
+                    moveCounter++;
                 }
 
                 // Check for coin pick-up
@@ -169,6 +207,11 @@ namespace CoinPanic
                 if ((input == "x"))
                 {
                     gameOver = true;
+                    Console.Clear();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    WritelnText(ConsoleColor.Black, ConsoleColor.Red, " = = = = > C O I N  P A N I C  < = = = = ");
+                    Console.WriteLine();
                     WritelnText(Back,ConsoleColor.Red,"You QUIT the game!");
                     WriteText(Back, Text, "You had");
                     WriteText(Back, ConsoleColor.Red, $" {maxMoves - moveCounter} ");
@@ -200,7 +243,6 @@ namespace CoinPanic
 
             while (input.ToLower() != "x")
             {
-
                 while (!Console.KeyAvailable) { Task.Delay(1); }
                 input = Console.ReadKey().KeyChar.ToString().ToLower();
 
